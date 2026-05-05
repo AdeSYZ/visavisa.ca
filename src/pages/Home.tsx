@@ -15,7 +15,7 @@ export default function Home() {
             className="z-10"
           >
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-headline font-extrabold text-primary leading-[1.1] tracking-tight mb-6">
-              Expert Immigration <br/><span className="text-secondary italic font-normal">Guidance & Advocacy</span> Since 1999
+              Expert Immigration <br/><span className="text-secondary italic font-normal">Guidance & Support</span> Since 1999
             </h1>
             <p className="text-xl text-on-surface-variant max-w-lg mb-10 leading-relaxed">
               Led by <span className="font-bold text-primary">Elie Nasrallah, B.A. (Hons)</span>, a widely respected CICC consultant, we've spent decades turning Canadian dreams into legal realities.
