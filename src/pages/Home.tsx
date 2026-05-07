@@ -177,7 +177,7 @@ export default function Home() {
             <div className="relative group">
               <div className="absolute inset-0 bg-primary/10 -rotate-6 rounded-lg group-hover:rotate-0 transition-transform"></div>
               <img 
-                src="https://picsum.photos/seed/book-cover/400/600" 
+                src="/gates&Walls.webp" 
                 alt="Gates and Walls Book Cover" 
                 className="relative z-10 w-72 shadow-2xl rounded-sm border border-outline-variant/10"
                 referrerPolicy="no-referrer"
