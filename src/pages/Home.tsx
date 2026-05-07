@@ -21,7 +21,7 @@ export default function Home() {
               Led by <span className="font-bold text-primary">Elie Nasrallah, B.A. (Hons)</span>, a widely respected CICC consultant, we've spent decades turning Canadian dreams into legal realities.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/book" className="bg-primary text-white px-8 py-4 rounded-lg font-headline font-bold flex items-center gap-2 group shadow-xl hover:bg-primary-container transition-all">
+              <Link to="/contact" className="bg-primary text-white px-8 py-4 rounded-lg font-headline font-bold flex items-center gap-2 group shadow-xl hover:bg-primary-container transition-all">
                 Book a Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -126,7 +126,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-24 items-center">
           <div className="relative">
             <div className="border-l-4 border-secondary pl-12">
-              <h2 className="text-5xl font-headline font-extrabold mb-8 tracking-tight italic">The Advocate's Desk</h2>
+              <h2 className="text-5xl font-headline font-extrabold mb-8 tracking-tight italic">The Expert's Desk</h2>
               <p className="text-xl text-white/80 mb-8 leading-relaxed font-light">
                 Elie Nasrallah is not just a consultant; he is a voice in the national conversation on immigration. As a Full Member of the <span className="text-white font-bold">CICC</span> and recognized among the "Top 25 People in the Capital," his expertise is sought by media and government alike.
               </p>
@@ -254,7 +254,7 @@ export default function Home() {
           <div className="relative z-10 max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-headline font-extrabold text-white mb-8 leading-tight">Ready to Begin Your Canadian Chapter?</h2>
             <p className="text-white/70 text-base md:text-lg mb-12">Schedule a direct assessment with Elie Nasrallah and receive a clear, honest roadmap for your immigration goals.</p>
-            <Link to="/book" className="inline-block bg-secondary hover:bg-red-800 text-white px-6 py-4 md:px-12 md:py-5 rounded-lg font-headline font-extrabold text-base md:text-xl transition-all shadow-2xl">
+            <Link to="/contact" className="inline-block bg-secondary hover:bg-red-800 text-white px-6 py-4 md:px-12 md:py-5 rounded-lg font-headline font-extrabold text-base md:text-xl transition-all shadow-2xl">
               Book Your Assessment Now
             </Link>
             <p className="mt-8 text-white/40 text-xs font-medium uppercase tracking-widest leading-relaxed">Initial consultations are confidential and comprehensive</p>

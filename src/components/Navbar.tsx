@@ -39,7 +39,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link 
-            to="/book"
+            to="/contact"
             className="bg-gradient-to-b from-primary to-primary-container text-white px-6 py-2.5 rounded-lg font-headline font-bold shadow-md hover:shadow-lg transition-all"
           >
             Book Appointment
@@ -80,7 +80,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link 
-                to="/book"
+                to="/contact"
                 onClick={closeMenu}
                 className="bg-primary text-white text-center py-4 rounded-xl font-headline font-bold mt-4"
               >

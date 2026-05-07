@@ -94,7 +94,7 @@ export default function Services() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <Link to="/book" className="bg-white text-primary px-10 py-4 rounded-lg font-headline font-bold hover:bg-surface-container transition-colors">
+                <Link to="/contact" className="bg-white text-primary px-10 py-4 rounded-lg font-headline font-bold hover:bg-surface-container transition-colors">
                   Discuss Your Case
                 </Link>
               </div>
