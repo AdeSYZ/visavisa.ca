@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <main className="pt-24">
-      {/* Hero Section */}
+      {/* Hero Section — Video */}
       <section className="relative overflow-hidden bg-surface py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -30,19 +30,21 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
             <div className="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative z-10">
-              <img 
-                src="palamFountain.webp" 
-                alt="Canadian landscape heritage" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                referrerPolicy="no-referrer"
+              <video
+                src="visa_visa_video.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 rounded-lg shadow-xl z-20 border border-outline-variant/10 max-w-xs">
@@ -56,13 +58,18 @@ export default function Home() {
       {/* Credential Strip */}
       <section className="bg-surface-container-high py-12">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
+          <div className="flex flex-wrap justify-center items-center gap-10 opacity-80">
             <div className="flex items-center gap-2 font-headline font-black text-xl text-primary">
               <Verified className="w-6 h-6" /> CICC MEMBER
             </div>
             <div className="flex items-center gap-2 font-headline font-black text-xl text-primary">
               <Award className="w-6 h-6" /> TOP 25 OTTAWA
             </div>
+            <img
+              src="visa_visa_award_logo.png"
+              alt="Three Best Rated — Best Immigration Consultants Ottawa 2020"
+              className="h-36 w-auto object-contain"
+            />
             <div className="flex items-center gap-2 font-headline font-black text-xl text-primary">
               <Gavel className="w-6 h-6" /> LEGAL EXCELLENCE
             </div>
@@ -79,13 +86,15 @@ export default function Home() {
           <h2 className="text-4xl font-headline font-extrabold text-primary mb-4">Core Pathways</h2>
           <div className="h-1 w-24 bg-secondary"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <div className="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl shadow-md flex flex-col justify-between border border-outline-variant/10 group hover:bg-primary transition-all duration-500">
             <div>
               <Rocket className="w-12 h-12 text-secondary mb-6 group-hover:text-white transition-colors" />
-              <h3 className="text-3xl font-headline font-bold text-primary mb-4 group-hover:text-white">Express Entry System</h3>
-              <p className="text-on-surface-variant group-hover:text-white/80 max-w-md">Mastering the new Category-Based Selection system to ensure your profile stands out in the selection pool.</p>
+              <h3 className="text-3xl font-headline font-bold text-primary mb-4 group-hover:text-white">Federal High-Skilled Class</h3>
+              <p className="text-on-surface-variant group-hover:text-white/80 max-w-md">
+                The forthcoming Federal High-Skilled Class will consolidate the former Express Entry streams — the Federal Skilled Worker Programme, Canadian Experience Class, and Federal Skilled Trades Programme — into a single, unified programme. Designed to prioritise high-wage earners and address Canada's evolving labour market demands, this new system retains the competitive Comprehensive Ranking System pool. We provide strategic profile assessment and planning to maximise your eligibility under the new framework.
+              </p>
             </div>
             <Link to="/services" className="text-primary font-bold flex items-center gap-2 group-hover:text-white mt-8">
               Learn More <ArrowRight className="w-4 h-4" />
@@ -128,21 +137,32 @@ export default function Home() {
             <div className="border-l-4 border-secondary pl-12">
               <h2 className="text-5xl font-headline font-extrabold mb-8 tracking-tight italic">The Advocate's Desk</h2>
               <p className="text-xl text-white/80 mb-8 leading-relaxed font-light">
-                Elie Nasrallah is not just a consultant; he is a voice in the national conversation on immigration. As a Full Member of the <span className="text-white font-bold">CICC</span> and recognized among the "Top 25 People in the Capital," his expertise is sought by media and government alike.
+                Elie Nasrallah is not merely a consultant; he is a recognised voice in Canada's national conversation on immigration policy. As a Full Member of the <span className="text-white font-bold">CICC</span> and honoured among the "Top 25 People in the Capital," his counsel is sought by media, government, and clients of the highest complexity.
               </p>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <Verified className="w-6 h-6 text-secondary mt-1" />
+                  <Verified className="w-6 h-6 text-secondary mt-1 shrink-0" />
                   <div>
                     <p className="font-bold text-lg">CICC Membership #R416303</p>
                     <p className="text-white/60 text-sm">Regulated Canadian Immigration Consultant in good standing.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Award className="w-6 h-6 text-secondary mt-1" />
+                  <img
+                    src="visa_visa_award_logo.png"
+                    alt="Three Best Rated Award"
+                    className="w-24 h-24 object-contain shrink-0"
+                  />
                   <div>
-                    <p className="font-bold text-lg">Best Immigration Consultants Award</p>
-                    <p className="text-white/60 text-sm">Multi-year recipient of Ottawa's consumer choice recognition.</p>
+                    <p className="font-bold text-lg">Three Best Rated® — Best Immigration Consultants, Ottawa</p>
+                    <p className="text-white/60 text-sm">2020 Award recipient. Recognised among Ottawa's Top 3 Immigration Consultancies by Three Best Rated®.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Award className="w-6 h-6 text-secondary mt-1 shrink-0" />
+                  <div>
+                    <p className="font-bold text-lg">Consumer Choice Award — Multi-Year Recipient</p>
+                    <p className="text-white/60 text-sm">Voted Ottawa's premier immigration consultancy by consumers for multiple consecutive years.</p>
                   </div>
                 </div>
               </div>
@@ -150,9 +170,9 @@ export default function Home() {
           </div>
           <div className="asymmetric-overlap">
             <div className="bg-surface-container-lowest p-2 rounded-lg shadow-2xl rotate-3">
-              <img 
-                src="/eliePortrait.webp" 
-                alt="Elie Nasrallah" 
+              <img
+                src="/eliePortrait.webp"
+                alt="Elie Nasrallah"
                 className="w-full grayscale hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -176,9 +196,9 @@ export default function Home() {
           >
             <div className="relative group">
               <div className="absolute inset-0 bg-primary/10 -rotate-6 rounded-lg group-hover:rotate-0 transition-transform"></div>
-              <img 
-                src="https://picsum.photos/seed/book-cover/400/600" 
-                alt="Gates and Walls Book Cover" 
+              <img
+                src="https://picsum.photos/seed/book-cover/400/600"
+                alt="Gates and Walls Book Cover"
                 className="relative z-10 w-72 shadow-2xl rounded-sm border border-outline-variant/10"
                 referrerPolicy="no-referrer"
               />
@@ -188,20 +208,20 @@ export default function Home() {
             <h2 className="text-primary font-headline font-black text-sm tracking-[0.2em] uppercase mb-4">Latest Publication</h2>
             <h3 className="text-4xl font-headline font-bold text-primary mb-6">Gates and Walls: Stories of Migration in Modern Times</h3>
             <p className="text-lg text-on-surface-variant leading-relaxed mb-8">
-              In his latest work, Elie Nasrallah explores the human dimension of the immigrant experience. Through compelling narratives and intellectual rigor, he examines the barriers and opportunities facing those searching for a new home.
+              In his latest work, Elie Nasrallah explores the human dimension of the immigrant experience. Through compelling narratives and intellectual rigour, he examines the barriers and opportunities facing those who seek a new home in Canada.
             </p>
             <div className="flex flex-wrap gap-6 items-center">
-              <a 
-                href="https://burnstownpublishing.com/product/gates-walls-stories-of-migration-and-modern-times/" 
-                target="_blank" 
+              <a
+                href="https://burnstownpublishing.com/product/gates-walls-stories-of-migration-and-modern-times/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-white px-8 py-4 rounded-lg font-headline font-bold hover:bg-primary-container transition-all"
               >
                 Learn More & Purchase
               </a>
-              <a 
-                href="http://www.eliemnasrallah.com" 
-                target="_blank" 
+              <a
+                href="http://www.eliemnasrallah.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-secondary font-headline font-extrabold hover:underline"
               >
@@ -227,7 +247,7 @@ export default function Home() {
             ].map((t, i) => (
               <div key={i} className={`bg-surface-container-lowest p-10 rounded-xl shadow-md border border-outline-variant/5 ${i === 1 ? 'mt-8 md:mt-16' : ''}`}>
                 <div className="flex gap-1 text-secondary mb-6">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
+                  {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 fill-current" />)}
                 </div>
                 <p className="text-on-surface mb-8 italic leading-relaxed">"{t.text}"</p>
                 <div className="flex items-center gap-4">
