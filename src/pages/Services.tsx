@@ -7,8 +7,8 @@ export default function Services() {
     {
       title: "Economic Immigration",
       icon: <Globe className="w-8 h-8" />,
-      description: "Strategic guidance for the Express Entry System and its new Category-Based Selection focus.",
-      items: ["Express Entry System (Strategic Profiling)", "Category-Based Selection (STEM, Healthcare, Trades)", "Provincial Nominee Programs (PNP)", "Atlantic Immigration Program"]
+      description: "Strategic immigration solutions through Express Entry, Provincial Nominee Programs, and category-based selection pathways.",
+      items: ["Express Entry System", "Category-Based Selection (French, Healthcare, STEM, Trades, Education, Agriculture)", "Provincial Nominee Programs (PNP)", "Atlantic Immigration Program"]
     },
     {
       title: "Family Class",
@@ -20,7 +20,7 @@ export default function Services() {
       title: "Business & Corporate",
       icon: <Briefcase className="w-8 h-8" />,
       description: "Strategic immigration solutions for businesses and entrepreneurs.",
-      items: ["Labour Market Impact Assessments (LMIA)", "Intra-Company Transfers", "Start-up Visa Program", "Self-Employed Persons Program"]
+      items: ["Labour Market Impact Assessments (LMIA)", "Intra-Company Transfers (ICT)", "Start-up Visa Program (SUV)", "Employer-Specific & LMIA-Exempt Work Permits"]
     },
     {
       title: "Temporary Residence",

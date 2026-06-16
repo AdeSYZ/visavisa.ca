@@ -57,8 +57,10 @@ export default function Home() {
       <section className="bg-surface-container-high py-12">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-            <div className="flex items-center gap-2 font-headline font-black text-xl text-primary">
+            <div>
+              <a href="https://college-ic.ca" target="_blank" rel="noreferrer" className="flex items-center gap-2 font-headline font-black text-xl text-primary hover:underline decoration-secondary underline-offset-4">
               <Verified className="w-6 h-6" /> CICC MEMBER
+              </a>
             </div>
             <div className="flex items-center gap-2 font-headline font-black text-xl text-primary">
               <Award className="w-6 h-6" /> TOP 25 OTTAWA
@@ -213,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 bg-surface">
+      {/* <section className="py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl font-headline font-extrabold text-primary mb-4">Voices of Success</h2>
@@ -243,7 +245,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 px-6 md:px-8">

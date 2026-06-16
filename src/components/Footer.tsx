@@ -22,7 +22,7 @@ export default function Footer() {
             <p className="text-primary font-bold text-sm uppercase tracking-wider mb-2">Legal</p>
             <a href="#" className="text-on-surface-variant text-sm hover:underline decoration-secondary underline-offset-4">Privacy Policy</a>
             <a href="#" className="text-on-surface-variant text-sm hover:underline decoration-secondary underline-offset-4">Terms of Service</a>
-            <a href="#" className="text-on-surface-variant text-sm hover:underline decoration-secondary underline-offset-4">CICC Verification</a>
+            <a href="https://www.college-ic.ca/" target="_blank" rel="noreferrer" className="text-on-surface-variant text-sm hover:underline decoration-secondary underline-offset-4">CICC Verification</a>
           </div>
         </div>
       </div>
