@@ -1,7 +1,37 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
+
+const FORMSPREE_ENDPOINT = 'YOUR_FORMSPREE_ENDPOINT_ID'; // e.g. https://formspree.io/f/xyzabcde
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', subject: 'General Inquiry', message: '' });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('submitting');
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name: `${formData.firstName} ${formData.lastName}`, ...formData }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', subject: 'General Inquiry', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
   return (
     <main className="pt-24 min-h-screen bg-surface">
       <section className="py-20 px-8">
@@ -101,24 +131,38 @@ export default function Contact() {
               className="bg-surface-container-lowest p-10 rounded-3xl shadow-xl border border-outline-variant/10"
             >
               <h2 className="text-3xl font-headline font-bold text-primary mb-8">Send a Message</h2>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+
+              {status === 'success' && (
+                <div className="flex items-center gap-3 bg-green-50 text-green-800 border border-green-200 rounded-xl p-4 mb-6">
+                  <CheckCircle className="w-5 h-5 shrink-0" />
+                  <p className="font-medium">Message sent! We'll get back to you shortly.</p>
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="flex items-center gap-3 bg-red-50 text-red-800 border border-red-200 rounded-xl p-4 mb-6">
+                  <AlertCircle className="w-5 h-5 shrink-0" />
+                  <p className="font-medium">Something went wrong. Please try again or email us directly.</p>
+                </div>
+              )}
+
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-primary uppercase tracking-wider">First Name</label>
-                    <input type="text" className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="John" />
+                    <input required name="firstName" type="text" value={formData.firstName} onChange={handleChange} className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="John" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-primary uppercase tracking-wider">Last Name</label>
-                    <input type="text" className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="Doe" />
+                    <input required name="lastName" type="text" value={formData.lastName} onChange={handleChange} className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="Doe" />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-primary uppercase tracking-wider">Email Address</label>
-                  <input type="email" className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="john@example.com" />
+                  <input required name="email" type="email" value={formData.email} onChange={handleChange} className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="john@example.com" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-primary uppercase tracking-wider">Subject</label>
-                  <select className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all">
+                  <select name="subject" value={formData.subject} onChange={handleChange} className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all">
                     <option>General Inquiry</option>
                     <option>Express Entry</option>
                     <option>Family Sponsorship</option>
@@ -128,10 +172,10 @@ export default function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-primary uppercase tracking-wider">Message</label>
-                  <textarea rows={5} className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="How can we help you?"></textarea>
+                  <textarea required name="message" rows={5} value={formData.message} onChange={handleChange} className="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all" placeholder="How can we help you?"></textarea>
                 </div>
-                <button className="w-full bg-primary text-white py-5 rounded-xl font-headline font-bold text-lg shadow-lg hover:bg-primary-container transition-all flex items-center justify-center gap-3">
-                  Send Message <Send className="w-5 h-5" />
+                <button type="submit" disabled={status === 'submitting'} className="w-full bg-primary text-white py-5 rounded-xl font-headline font-bold text-lg shadow-lg hover:bg-primary-container transition-all flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed">
+                  {status === 'submitting' ? 'Sending…' : 'Send Message'} <Send className="w-5 h-5" />
                 </button>
               </form>
             </motion.div>
