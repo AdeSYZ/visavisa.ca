@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
 
-const FORMSPREE_ENDPOINT = 'YOUR_FORMSPREE_ENDPOINT_ID'; // e.g. https://formspree.io/f/xyzabcde
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjkvrzk'; // e.g. https://formspree.io/f/xyzabcde
 
 export default function Contact() {
   const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', subject: 'General Inquiry', message: '' });
